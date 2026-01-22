@@ -1,0 +1,31 @@
+# YouTube Competitive Analysis - Configuration File
+# Copy this to config.yaml and customize
+
+# Default output directory
+output_dir: ./output
+
+# Channels to monitor (for watchlist feature)
+watchlist:
+  # - @competitor1
+  # - @competitor2
+  # - UCxxxxxxxxxxxxxxxx
+
+# Webhook notifications (optional)
+# Get Discord webhook: Server Settings > Integrations > Webhooks
+# Get Slack webhook: https://api.slack.com/messaging/webhooks
+webhooks:
+  # discord: https://discord.com/api/webhooks/YOUR_WEBHOOK_URL
+  # slack: https://hooks.slack.com/services/YOUR/WEBHOOK/URL
+
+# Default filters (optional)
+defaults:
+  # min_views: 1000
+  # limit: 500
+  # since: 2024-01-01
+
+# CPM overrides by category (USD per 1000 views)
+# Uncomment and adjust if you have better estimates for your niche
+# cpm:
+#   Science & Technology: 6.0
+#   Education: 5.0
+#   Gaming: 3.0
