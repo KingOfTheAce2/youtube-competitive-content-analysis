@@ -28,6 +28,44 @@ Analyze any YouTube channel and get:
 
 > **New to the tool?** See [INSTRUCTIONS.md](INSTRUCTIONS.md) for step-by-step workflows.
 
+## Folder map: what is public and what is private
+
+**Pipeline (committed, safe on GitHub)**
+
+| File | What it does |
+|---|---|
+| `youtube_analyzer.py` | Command line entry point; the code lives in the `ytanalyzer/` package (about 30 modules: `fetch`, `metrics`, `exports`, `sync`, `recommend`, `cli`, ...) |
+| `transcript_fetcher.py` | Fetches and searches video captions |
+| `google_search_analyzer.py`, `news_signal_scanner.py`, `topic_signals.py`, `topic_review.py`, `reddit_topic_scanner.py`, `reddit_story_scan.py` | Topic and demand research |
+| `my_channel_analytics.py`, `sync_my_channel.py` | Your own channel's analytics (needs your own OAuth credentials) |
+| `clip_picker.py` | Proposes Shorts moments from a long video's captions; optional local LLM (Ollama) and ffmpeg render |
+| `clip_dashboard.py` | Builds a local review page for the proposed moments |
+| `short_maker.py` | Renders chosen moments as finished Shorts: smoothed face-follow 9:16 crop that keeps the source's lower thirds out of frame, hook card in a band above the head, jump cuts on dead air, word-highlight captions inside the Shorts safe zone, alternating punch-in at cuts, plus a .txt with title, description and hashtags |
+| `config.yaml`, `niche_config.yaml`, `.env.example`, `requirements.txt` | Generic settings and templates |
+
+**Private (git-ignored, never commit)**
+
+| Path | Why |
+|---|---|
+| `.env`, `client_secret.json`, `youtube_oauth_token.json`, `cookies.txt` | API keys, OAuth credentials, login cookies |
+| `my_channels.yaml` | Your channel, competitor list and priority channels |
+| `output/` | All analysis results, databases, clip proposals and the review dashboard |
+| `content_drafts/`, `private/` | Draft scripts, own-channel video lists, a second channel's workspace, scratch files |
+| `*.db`, `vectors.db` | Local databases |
+
+Rule of thumb: if a file names your channels, lists your videos or holds a credential, it belongs in the private list. Check with `git add -n -A .` before any commit.
+
+### Shorts clip workflow
+
+```bash
+python clip_picker.py VIDEO_ID --llm          # propose moments (needs Ollama running)
+python clip_picker.py --batch ids.txt --llm   # many videos, resumable
+python clip_dashboard.py                      # build output/clips/dashboard.html, review in browser
+python short_maker.py VIDEO_ID --pick 1 3     # finished 9:16 Shorts: download, face-follow crop, burned-in word captions
+python short_maker.py --decisions clip_decisions.json   # everything marked Keep in the dashboard
+python short_maker.py VIDEO_ID --pick 2 --force --out scratch   # re-render elsewhere; also --no-cuts, --no-punch, --hook-secs 3, --progress-bar
+```
+
 ## Quick Start
 
 ```bash

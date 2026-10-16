@@ -1,0 +1,541 @@
+# Niche-specific config for the search/news analysis tools.
+# One file per channel scope - point --niche-config at a different
+# file to run these tools for a channel in a different niche.
+
+topic_categories:
+  countries:
+  - afghanistan
+  - albania
+  - algeria
+  - andorra
+  - angola
+  - antigua and barbuda
+  - argentina
+  - armenia
+  - australia
+  - austria
+  - azerbaijan
+  - bahamas
+  - bahrain
+  - bangladesh
+  - barbados
+  - belarus
+  - belgium
+  - belize
+  - benin
+  - bhutan
+  - bolivia
+  - bosnia and herzegovina
+  - botswana
+  - brazil
+  - brunei
+  - bulgaria
+  - burkina faso
+  - burundi
+  - cabo verde
+  - cambodia
+  - cameroon
+  - canada
+  - central african republic
+  - chad
+  - chile
+  - china
+  - colombia
+  - comoros
+  - congo
+  - costa rica
+  - croatia
+  - cuba
+  - cyprus
+  - czech republic
+  - denmark
+  - djibouti
+  - dominica
+  - dominican republic
+  - dubai
+  - ecuador
+  - egypt
+  - el salvador
+  - equatorial guinea
+  - eritrea
+  - estonia
+  - eswatini
+  - ethiopia
+  - fiji
+  - finland
+  - france
+  - gabon
+  - gambia
+  - georgia
+  - germany
+  - ghana
+  - greece
+  - grenada
+  - guatemala
+  - guinea
+  - guinea-bissau
+  - guyana
+  - haiti
+  - honduras
+  - hungary
+  - iceland
+  - india
+  - indonesia
+  - iran
+  - iraq
+  - ireland
+  - israel
+  - italy
+  - ivory coast
+  - jamaica
+  - japan
+  - jordan
+  - kazakhstan
+  - kenya
+  - kiribati
+  - kosovo
+  - kuwait
+  - kyrgyzstan
+  - laos
+  - latvia
+  - lebanon
+  - lesotho
+  - liberia
+  - libya
+  - liechtenstein
+  - lithuania
+  - luxembourg
+  - madagascar
+  - malawi
+  - malaysia
+  - maldives
+  - mali
+  - malta
+  - marshall islands
+  - mauritania
+  - mauritius
+  - mexico
+  - micronesia
+  - moldova
+  - monaco
+  - mongolia
+  - montenegro
+  - morocco
+  - mozambique
+  - myanmar
+  - namibia
+  - nauru
+  - nepal
+  - netherlands
+  - new zealand
+  - nicaragua
+  - niger
+  - nigeria
+  - north korea
+  - north macedonia
+  - norway
+  - oman
+  - pakistan
+  - palau
+  - palestine
+  - panama
+  - papua new guinea
+  - paraguay
+  - peru
+  - philippines
+  - poland
+  - portugal
+  - qatar
+  - romania
+  - russia
+  - rwanda
+  - saint kitts and nevis
+  - saint lucia
+  - saint vincent and the grenadines
+  - samoa
+  - san marino
+  - sao tome and principe
+  - saudi arabia
+  - senegal
+  - serbia
+  - seychelles
+  - sierra leone
+  - singapore
+  - slovakia
+  - slovenia
+  - solomon islands
+  - somalia
+  - south africa
+  - south korea
+  - south sudan
+  - spain
+  - sri lanka
+  - sudan
+  - suriname
+  - sweden
+  - switzerland
+  - syria
+  - taiwan
+  - tajikistan
+  - tanzania
+  - thailand
+  - timor-leste
+  - togo
+  - tonga
+  - trinidad and tobago
+  - tunisia
+  - turkey
+  - turkmenistan
+  - tuvalu
+  - uganda
+  - uk
+  - ukraine
+  - uae
+  - united states
+  - uruguay
+  - uzbekistan
+  - vanuatu
+  - vatican city
+  - venezuela
+  - vietnam
+  - yemen
+  - zambia
+  - zimbabwe
+  visa_types:
+  - golden visa
+  - digital nomad visa
+  - investor visa
+  - d7 visa
+  - beckham law
+  - nhr
+  - non-habitual resident
+  - retirement visa
+  - freelancer visa
+  - startup visa
+  - entrepreneur visa
+  - work permit
+  - residence permit
+  - permanent residency
+  - citizenship
+  - passport
+  - second passport
+  - citizenship by investment
+  - naturalization
+  tax_terms:
+  - tax residency
+  - tax resident
+  - territorial tax
+  - worldwide tax
+  - double taxation
+  - tax treaty
+  - feie
+  - foreign earned income
+  - foreign tax credit
+  - fbar
+  - fatca
+  - cfc
+  - gilti
+  - pfic
+  - exit tax
+  - wealth tax
+  - capital gains
+  - inheritance tax
+  - estate tax
+  - property tax
+  - vat
+  - corporate tax
+  - flat tax
+  - tax haven
+  - tax free
+  - zero tax
+  - low tax
+  - tax optimization
+  - us llc
+  - llc for non-residents
+  - foreign-owned llc
+  - form 5472
+  - wyoming llc
+  - delaware llc
+  - anonymous llc
+  - llc taxes
+  - holding llc
+  expat_lifestyle:
+  - cost of living
+  - expat life
+  - moving abroad
+  - relocate
+  - retire abroad
+  - work remotely
+  - digital nomad
+  - location independent
+  - expat community
+  - healthcare abroad
+  - banking abroad
+  - real estate
+  - property investment
+  - rental income
+  - passive income
+  - remote work
+niche_terms:
+- visa
+- tax
+- residency
+- citizenship
+- passport
+policy_signal_words:
+- crackdown
+- reform
+- bill
+- ban
+- suspend
+- suspended
+- new rule
+- new rules
+- requirement
+- requirements
+- deadline
+- increase
+- increases
+- change
+- changes
+- tighten
+- tightens
+- restrict
+- restricts
+- restriction
+- warns
+- warning
+- penalty
+- penalties
+- fine
+- fines
+- investigation
+- lawsuit
+- revoked
+- revoke
+- scrap
+- scraps
+- overhaul
+- cap
+- quota
+local_editions:
+  portugal:
+  - pt-PT
+  - PT
+  - PT:pt-150
+  spain:
+  - es
+  - ES
+  - ES:es
+  indonesia:
+  - id
+  - ID
+  - ID:id
+  thailand:
+  - th
+  - TH
+  - TH:th
+  uae:
+  - ar
+  - AE
+  - AE:ar
+  malaysia:
+  - ms
+  - MY
+  - MY:ms
+  mexico:
+  - es-419
+  - MX
+  - MX:es-419
+  italy:
+  - it
+  - IT
+  - IT:it
+  germany:
+  - de
+  - DE
+  - DE:de
+  france:
+  - fr
+  - FR
+  - FR:fr
+  greece:
+  - el
+  - GR
+  - GR:el
+  turkey:
+  - tr
+  - TR
+  - TR:tr
+  vietnam:
+  - vi
+  - VN
+  - VN:vi
+  philippines:
+  - en-PH
+  - PH
+  - PH:en
+  panama:
+  - es-419
+  - PA
+  - PA:es-419
+  colombia:
+  - es-419
+  - CO
+  - CO:es-419
+  brazil:
+  - pt-BR
+  - BR
+  - BR:pt-BR
+  japan:
+  - ja
+  - JP
+  - JP:ja
+  south korea:
+  - ko
+  - KR
+  - KR:ko
+  china:
+  - zh-CN
+  - CN
+  - CN:zh-Hans
+  taiwan:
+  - zh-TW
+  - TW
+  - TW:zh-TW
+  russia:
+  - ru
+  - RU
+  - RU:ru
+  poland:
+  - pl
+  - PL
+  - PL:pl
+  netherlands:
+  - nl
+  - NL
+  - NL:nl
+  sweden:
+  - sv
+  - SE
+  - SE:sv
+  norway:
+  - 'no'
+  - 'NO'
+  - NO:no
+  denmark:
+  - da
+  - DK
+  - DK:da
+  finland:
+  - fi
+  - FI
+  - FI:fi
+  czech republic:
+  - cs
+  - CZ
+  - CZ:cs
+  hungary:
+  - hu
+  - HU
+  - HU:hu
+  croatia:
+  - hr
+  - HR
+  - HR:hr
+  serbia:
+  - sr
+  - RS
+  - RS:sr
+  ukraine:
+  - uk
+  - UA
+  - UA:uk
+  israel:
+  - he
+  - IL
+  - IL:he
+  saudi arabia:
+  - ar
+  - SA
+  - SA:ar
+  egypt:
+  - ar
+  - EG
+  - EG:ar
+  morocco:
+  - fr
+  - MA
+  - MA:fr
+  argentina:
+  - es-419
+  - AR
+  - AR:es-419
+  chile:
+  - es-419
+  - CL
+  - CL:es-419
+  peru:
+  - es-419
+  - PE
+  - PE:es-419
+  ecuador:
+  - es-419
+  - EC
+  - EC:es-419
+  costa rica:
+  - es-419
+  - CR
+  - CR:es-419
+  uruguay:
+  - es-419
+  - UY
+  - UY:es-419
+  india:
+  - en-IN
+  - IN
+  - IN:en
+  south africa:
+  - en-ZA
+  - ZA
+  - ZA:en-ZA
+  australia:
+  - en-AU
+  - AU
+  - AU:en-AU
+  new zealand:
+  - en-NZ
+  - NZ
+  - NZ:en-NZ
+  canada:
+  - en-CA
+  - CA
+  - CA:en-CA
+  switzerland:
+  - de
+  - CH
+  - CH:de
+  austria:
+  - de
+  - AT
+  - AT:de
+  romania:
+  - ro
+  - RO
+  - RO:ro
+  bulgaria:
+  - bg
+  - BG
+  - BG:bg
+  cyprus:
+  - el
+  - CY
+  - CY:el
+  malta:
+  - en-MT
+  - MT
+  - MT:en
+  singapore:
+  - en-SG
+  - SG
+  - SG:en-SG

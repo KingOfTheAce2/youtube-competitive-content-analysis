@@ -4,24 +4,62 @@
 # Default output directory
 output_dir: ./output
 
-# Channels to monitor (for watchlist feature)
-watchlist:
-  # - @competitor1
-  # - @competitor2
-  # - UCxxxxxxxxxxxxxxxx
+# =============================================================================
+# YOUR CHANNEL - The "home base" for competitive analysis
+# =============================================================================
+# Set your channel handle or ID here. This is used as the reference point
+# for all competitive analysis, gap detection, and recommendations.
+#
+# NOTE: For privacy, use my_channels.yaml instead (gitignored).
+# Run: python youtube_analyzer.py --set-my-channel @YourChannel
+# This will save to my_channels.yaml automatically.
+
+# =============================================================================
+# COMPETITOR TRACKING
+# =============================================================================
+# Seed competitors - provide 2-3 known competitors, and the tool will
+# automatically discover more similar channels
+#
+# NOTE: For privacy, use my_channels.yaml instead (gitignored).
+# Run: python youtube_analyzer.py --add-competitor @Competitor
+# This will save to my_channels.yaml automatically.
+
+# Discovery settings for finding new competitors
+discovery:
+  max_competitors: 40        # Maximum competitors to track
+  min_relevance_score: 0.15  # Minimum relevance score (0-1) to include a competitor
+  auto_discover: true        # Automatically discover new competitors during sync
+
+# =============================================================================
+# SYNC SETTINGS
+# =============================================================================
+# Configure how incremental sync behaves
+sync:
+  default_lookback_days: 30     # How far back to look for new videos on first sync
+  snapshot_interval_hours: 24   # Minimum time between view/like snapshots
+  track_view_trends: true       # Enable view count trend tracking over time
+
+# =============================================================================
+# WATCHLIST (for alerts feature)
+# =============================================================================
+# Channels to monitor for trend alerts
+#
+# NOTE: For privacy, set this in my_channels.yaml instead (gitignored) -
+# it overrides the (empty) watchlist here.
+watchlist: []
 
 # Webhook notifications (optional)
 # Get Discord webhook: Server Settings > Integrations > Webhooks
 # Get Slack webhook: https://api.slack.com/messaging/webhooks
-webhooks:
-  # discord: https://discord.com/api/webhooks/YOUR_WEBHOOK_URL
-  # slack: https://hooks.slack.com/services/YOUR/WEBHOOK/URL
+# webhooks:
+#   discord: https://discord.com/api/webhooks/YOUR_WEBHOOK_URL
+#   slack: https://hooks.slack.com/services/YOUR/WEBHOOK/URL
 
 # Default filters (optional)
-defaults:
-  # min_views: 1000
-  # limit: 500
-  # since: 2024-01-01
+# defaults:
+#   min_views: 1000
+#   limit: 500
+#   since: 2024-01-01
 
 # CPM overrides by category (USD per 1000 views)
 # Uncomment and adjust if you have better estimates for your niche

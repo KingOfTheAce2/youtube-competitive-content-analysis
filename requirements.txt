@@ -4,8 +4,21 @@ python-dotenv>=1.0.0
 openpyxl>=3.1.0
 pyyaml>=6.0.0
 reportlab>=4.0.0
+requests>=2.31.0
+youtube-transcript-api>=1.0.0
+pytrends>=4.9.0
 
 # Optional: AI-powered recommendations (install one of these)
 # anthropic>=0.18.0      # For Claude API
 # openai>=1.0.0          # For GPT-4 API
 # google-generativeai>=0.3.0  # For Gemini API
+
+# Owner-only analytics (my_channel_analytics.py)
+google-auth>=2.0.0
+google-auth-oauthlib>=1.0.0
+google-auth-httplib2>=0.2.0
+
+# Shorts clip tools (clip_picker.py, short_maker.py)
+yt-dlp
+faster-whisper
+opencv-python-headless<5

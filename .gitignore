@@ -58,3 +58,38 @@ Thumbs.db
 
 # Claude Code
 .claude/
+.claude-flow/
+
+# Private competitive analysis config (contains your channel & competitors)
+my_channels.yaml
+config.local.yaml
+
+# Browser cookies (used for transcript fetching — contains auth tokens)
+cookies.txt
+*.cookies.txt
+
+# Junk / temp files
+nul
+*.tmp
+
+# Large vector/embedding databases
+vectors.db
+
+# Search analysis output (contains query history)
+search_demand.db
+google_search_analysis_*.json
+google_search_report_*.md
+
+# CSV/JSON exports that may contain competitor data
+*.csv
+reports/
+
+# Draft video scripts / storyboards (personal content drafts, not code)
+content_drafts/
+
+# OAuth credentials for my_channel_analytics.py
+client_secret.json
+youtube_oauth_token.json
+
+# Everything private that is not a credential or output (own-channel data, second channel, scratch)
+private/
