@@ -71,6 +71,13 @@ scopes = [SCOPE_ANALYTICS, SCOPE_YT] + ([] if args.no_revenue else [SCOPE_MONEY]
 creds = get_credentials(scopes)
 analytics = build('youtubeAnalytics', 'v2', credentials=creds)
 youtube = build('youtube', 'v3', credentials=creds)
+_mine = youtube.channels().list(part='snippet,statistics', mine=True).execute().get('items', [])
+if not _mine or int(_mine[0]['statistics'].get('videoCount', 0)) == 0:
+    who = _mine[0]['snippet']['title'] if _mine else 'no channel'
+    os.remove(TOKEN_FILE)
+    sys.exit(f'Signed in as "{who}", which has no videos. In the browser pick the brand channel '
+             f'(the channel you publish on) on the "Choose an account or brand account" screen. Run again.')
+print(f"Channel: {_mine[0]['snippet']['title']} ({_mine[0]['statistics']['videoCount']} videos)")
 have_revenue = not args.no_revenue
 REV = 'estimatedRevenue'
 

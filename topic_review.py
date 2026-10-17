@@ -32,6 +32,14 @@ if args.niche_config:
             + TOPIC_CATEGORIES.get('countries', [])
         ))
 
+# Off-niche channels to leave out of the gap list: gap_exclude_channels in my_channels.yaml (gitignored)
+try:
+    import yaml
+    with open('my_channels.yaml', encoding='utf-8') as f:
+        GAP_EXCLUDE = (yaml.safe_load(f) or {}).get('gap_exclude_channels') or []
+except FileNotFoundError:
+    GAP_EXCLUDE = []
+
 DB = os.path.join(args.output, 'competitive_analysis.db')
 conn = sqlite3.connect(DB)
 
@@ -97,12 +105,10 @@ comp_rows = conn.execute("""
     SELECT c.title, v.title, v.view_count, v.publish_date
     FROM videos v JOIN channels c ON v.channel_id=c.channel_id
     WHERE v.channel_id != ?
-      AND c.title NOT LIKE '%Scott%'
-      AND c.title NOT LIKE '%Traveling%'
-      AND c.title NOT LIKE '%Gran Canaria%'
+""" + "".join("      AND c.title NOT LIKE ?\n" for _ in GAP_EXCLUDE) + """
     ORDER BY v.view_count DESC
     LIMIT 60
-""", (MY_CHANNEL_ID,)).fetchall()
+""", (MY_CHANNEL_ID, *[f'%{t}%' for t in GAP_EXCLUDE])).fetchall()
 
 print("\n=== TOP NICHE COMPETITOR VIDEOS ===")
 for ch, title, views, pub in comp_rows:
